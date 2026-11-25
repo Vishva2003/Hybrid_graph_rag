@@ -23,7 +23,7 @@ class DocumentLoader:
 
                 documents.append(
                     Document(
-                        doc_id = doc_id,
+                        id = doc_id,
                         text=page_text.strip(),
                         metadata={
                             "file_name": file_path.name,
