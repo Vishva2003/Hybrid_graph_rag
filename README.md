@@ -280,4 +280,4 @@ Run them with `jupyter lab` from the project root.
 
 ## License
 
-Add your license here (e.g. MIT).
+This project is licensed under the MIT License - see the LICENSE file for details.
