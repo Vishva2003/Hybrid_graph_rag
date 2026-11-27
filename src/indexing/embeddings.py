@@ -2,6 +2,7 @@ from typing import List
 from llama_index.core.schema import TextNode
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 import logging
+from src.config import EMBEDDING_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -11,7 +12,7 @@ class Embedder:
     Handles embedding of TextNodes using local BAAI/bge-small-en-v1.5 model.
     """
 
-    def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5"):
+    def __init__(self, model_name: str = EMBEDDING_MODEL):
         self.model_name = model_name
 
         self.embed_model = HuggingFaceEmbedding(
@@ -49,6 +50,9 @@ class Embedder:
         Embed a single query string.
         """
         return self.embed_model.get_query_embedding(query)
+
+
+# unit testing 
 
 
 if __name__ == "__main__":

@@ -5,12 +5,13 @@ from pathlib import Path
 from typing import List
 from llama_index.core.schema import Document, TextNode
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from src.config import CHUNK_OVERLAP,CHUNK_SIZE
 
 logger = logging.getLogger(__name__)
 class Chunker:
     """Chunk documents using RecursiveCharacterTextSplitter."""
 
-    def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200):
+    def __init__(self, chunk_size: int = CHUNK_SIZE, chunk_overlap: int = CHUNK_OVERLAP):
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
 

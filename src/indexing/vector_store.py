@@ -114,7 +114,7 @@ class VectorStore:
                 text=payload.get("text", ""),
                 ref_doc_id=payload.get("ref_doc_id"),
                 metadata={k: v for k, v in payload.items()
-                          if k not in ("text", "node_id", "ref_doc_id")},
+                        if k not in ("text", "node_id", "ref_doc_id")},
             )
             results.append(NodeWithScore(node=node, score=float(hit.score)))
 
@@ -124,6 +124,8 @@ class VectorStore:
     def get_index_size(self) -> int:
         info = self.client.get_collection(self.collection_name)
         return info.points_count or 0
+
+# unit testing 
 
 
 if __name__ == "__main__":
